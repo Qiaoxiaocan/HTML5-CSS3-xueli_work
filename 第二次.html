@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <title>HTML5表单</title>
+        <style type = "text/css">
+            article{
+                border: 1px solid #000;
+                height: 480px;
+                width: 200px;
+            }
+            form{
+                padding-top: 10px;
+                padding-left: 10px;
+                line-height: 30px;
+            }
+            #submit{
+                margin-top: 10px;
+                background-color: rgb(228, 222, 222);
+                height: 30px;
+                width: 163px;
+                border: none;
+            }
+            #record{
+                font-size: 20px;
+                color: red;
+                background-color: white;
+                height: 25px;
+                width: 85px;
+                position: relative;
+                margin-top: -25px;
+                text-align: center;
+            }
+            #star{
+                color: red;
+                display: inline;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>学生信息</h1>
+        </header>
+        <article>
+            <form>
+                <div id = "record">
+                    学生档案
+                </div>
+                姓名:<br>
+                <input type = "text" name = "user_name" required placeholder = "请输入姓名" /><div id = "star">&nbsp;*</div><br>
+                学号:<br>
+                <input type = "number" name = "stu_num" required placeholder = "请输入学号" /><div id = "star">&nbsp;*</div><br>
+                手机号码:<br>
+                <input type = "tel" name = "phone_num" required placeholder = "请输入手机号" /><div id = "star">&nbsp;*</div><br>
+                邮箱地址:<br>
+                <input type = "email" name = "mailbox" required placeholder = "请输入邮箱地址" /><div id = "star">&nbsp;*</div><br>
+                录取学校:<br>
+                <input type = "search" name = "school" list = "school" />
+                <datalist id = "school">
+                    <option value="河北师范大学"></option>
+                    <option value="河北科技大学"></option>
+                    <option value="河北地质大学"></option>
+                    <option value="河北外国语大学"></option>
+                    <option value="燕山大学"></option>
+                    <option value="东北大学秦皇岛分校"></option>
+                    <option value="河北经贸大学"></option>
+                </datalist>
+                <br>
+                入学成绩:<br>
+                <input type = "number" name = "achieve" step="0.01" /><br>
+                入学时间:<br>
+                <input type = "date" name = "time"><br>
+                <input type = "submit" name = "submit" id = "submit" value = "提交">
+            </form>
+        </article>
+    </body>
+</html>
