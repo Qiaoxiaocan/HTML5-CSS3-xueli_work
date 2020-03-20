@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <title>第三次作业：Web存储</title>
+        <style type = "text/css">
+            ul li{
+                list-style: none;
+            }
+            article{
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                margin-top: -300px;
+                margin-left: -350px;
+                height: 350px;
+                width: 700px;
+                border-top: 2px solid rgb(109, 109, 106);
+                border-bottom: 2px solid rgb(109, 109, 106);
+                border-left: 1px solid rgb(109, 109, 106);
+                border-right: 1px solid rgb(109, 109, 106);
+                box-shadow: 0 2px 2px 2px rgb(167, 167, 164);
+            }
+            h1{
+                color: red;
+                font-size: 35px;
+                height: 40px;
+                width: 145px;
+                text-align: center;
+                background-color: white;
+                margin-top: -25px;
+                margin-left: 10px;
+            }
+            #menu{
+                border: 2px solid rgb(196, 187, 187);
+                height: 80px;
+                width: 660px;
+                margin-left: 20px;
+                margin-top: 50px;
+            }
+            ul{
+                height: 80px;
+                width: 660px;
+                margin-left: -40px;
+                margin-top: 0px;
+            }
+            li{
+                height: 40px;
+                width: 30px;
+                
+                margin-left: 5px;
+                
+                margin-right: 10px;
+                float: left;
+            }
+            #col1{
+                background-color: darkgray;
+                /* margin-top: 10px; */
+            }
+            #col2{
+                /* margin-top: 20px; */
+                background-color: rgb(102, 141, 212);
+            }
+            #col3{
+                /* margin-top: 20px; */
+                background-color: rgb(248, 110, 179);
+            }
+            #col4{
+                /* margin-top: 20px; */
+                background-color: rgb(185, 247, 252);
+            }
+            #col5{
+                /* margin-top: 20px; */
+                background-color: rgb(251, 255, 1);
+            }
+            #col6{
+                /* margin-top: 20px; */
+                background-color: rgb(30, 255, 0);
+            }
+            #content{
+                height: 140px;
+                width: 600px;
+                margin-left: 50px;
+                margin-top: 25px;
+                background-color: darkgray;
+            }
+            p{
+                font-size: 23px;
+                line-height: 40px;
+            }
+            .now{
+                margin-top: 10px;
+            }
+            .other{
+                margin-top: 20px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <article>
+            <div id = "headline">
+                <h1>网页换肤</h1>
+            </div>
+            <div id = "menu">
+                <ul>
+                    <li id = "col1" class = "now" title = "灰色"></li>
+                    <li id = "col2" class = "other" title = "蓝色"></li>
+                    <li id = "col3" class = "other" title = "紫红色"></li>
+                    <li id = "col4" class = "other" title = "淡蓝色"></li>
+                    <li id = "col5" class = "other" title = "黄色"></li>
+                    <li id = "col6" class = "other" title = "绿色"></li>
+                </ul>
+            </div>
+            <div id = "content">
+                <p>LocalStorage将数据保存在客户端本地的硬件设备中，即使浏览器被关闭了，该数据仍然存在，下次打开浏览器访问网站时仍然可以继续使用。</p>
+            </div>
+        </article>
+    </body>
+    <script>
+        window.onload = function(){
+            if(window.localStorage){
+                var storage = window.localStorage;
+                var menu = document.getElementById("menu");
+                var ul = document.getElementsByTagName("ul");
+                var li = document.getElementsByTagName("li");
+
+                if(storage.color){
+                    document.getElementById("content").style.backgroundColor = storage.color;
+
+                    for(var i = 1; i <= 6; i ++){
+                        var coli = document.getElementById("col" + i);
+                        var colicol = window.getComputedStyle(coli, null).getPropertyValue("background-color");
+                        if(colicol == storage.color){
+                            coli.className = "now";
+                        }
+                        else{
+                            coli.className = "other";
+                        }
+                    }
+                }
+                
+                for(var i = 0; i < 6; i ++){
+                    li[i].onclick = function(){
+                        for(var j = 0; j < 6; j ++){
+                            li[j].className = "other";
+                        }
+                        this.className = "now";
+                        var col = window.getComputedStyle(this, null).getPropertyValue("background-color");
+                        var bgcol = document.getElementById("content").style.backgroundColor = col;
+                        
+                        storage.color = col;
+                    }
+                }
+            }
+            else{
+                alert("您的浏览器不支持localStorage");
+            }
+        }
+    </script>
+</html>
