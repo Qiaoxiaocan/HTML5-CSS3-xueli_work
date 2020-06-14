@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <title>08</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <link href="css/bootstrap.css" rel="stylesheet"/>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            ul li{
+                list-style: none;
+                display: inline;
+            }
+            a{
+                text-decoration: none;
+            }
+            #navigation_2{
+                height: 80px;
+            }
+            body{
+                background-color: rgb(211, 211, 216);
+            }
+            @media screen and (min-width: 551px){
+                .container-fluid{
+                    background-color: rgb(225, 225, 225);
+                }
+                #navigation_1{
+                    background-color: rgb(40, 40, 40);
+                    height: 45px;
+                    color: rgb(184, 184, 184);
+                }
+                #navigation_1_3{
+                    float: right;
+                    margin-right: 80px;
+                    height: 45px;
+                    width: 100px;
+                    line-height: 45px;
+                    font-size: 12px;
+                }
+                #navigation_1_2{
+                    float: right;
+                    margin-right: 30px;
+                    width: 130px;
+                    height: 45px;
+                    font-size: 18px;
+                    line-height: 45px;
+                }
+                #navigation_1_1{
+                    float: right;
+                    width: 30px;
+                    height: 26px;
+                    margin-top: 9px;
+                    margin-right: 10px;
+                }
+                #navigation_2 {
+                    background-color: rgb(225, 225, 225);
+                    width: auto;
+                }
+                #navigation_2 a{
+                    color: black;
+                }
+                #bs-1 ul{
+                    margin-left: 80px;
+                }
+                #bs-1 ul li{
+                    height: 57px;
+                    width: 130px;
+                    font-size: 20px;
+                    margin-top: 30px;
+                    text-align: center;
+                }
+                #bs-1 .active{
+                    border-bottom: solid 3px rgb(203, 84, 5);
+                    background-color: rgb(225, 225, 225);
+                }
+                #navigation_2_btn_2{
+                    display: none;
+                }
+                #header_1{
+                    background-image: url("img/banner.jpg");
+                    height: 450px;
+                    width: auto;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+                #header_1_1{
+                    font-size: 3vw;
+                    margin-top: 60px;
+                    color: rgb(225, 225, 225);
+                    font-weight: lighter;
+                }
+                #header_1_2{
+                    color: rgb(225, 225, 225);
+                    border-top: solid 1px rgb(225, 225, 225);
+                    margin-top: 10px;
+                    padding-top: 15px;
+                    line-height: 20px;
+                    font-size: 1.4vw;
+                    font-weight: lighter;
+                    width: 24vw;
+                }
+                #header_1_3{
+                    color: rgb(225, 225, 225);
+                    border-bottom: solid 1px rgb(225, 225, 225);
+                    margin-top: 10px;
+                    padding-bottom: 15px;
+                    line-height: 20px;
+                    font-size: 1.4vw;
+                    font-weight: lighter;
+                    width: 28vw;
+                    /* margin-left: -16.7vw; */
+                }
+                #header_1_4{
+                    display: none;
+                }
+                #header_2_1{
+                    border: solid 3px rgba(26, 25, 66, 0.5);
+                    margin-top: 90px;
+                    display: inline-flex;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 10px;
+                }
+                #header_2_2{
+                    margin-right: 8px;
+                }
+                #header_2_3{
+                    width: 25%;
+                    font-weight: 100;
+                    text-align: center;
+                    line-height: 46px;
+                    background-color: rgb(211, 211, 216);
+                    height: 100%;
+                    margin-bottom: 0;
+                    border-top-left-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                }
+                #header_2_4{
+                    width: 50%;
+                    background-color: rgb(225, 225, 225);
+                    font-weight: lighter;
+                }
+                #header_2_5{
+                    width: 25%;
+                    background-color: rgb(203, 84, 5);
+                    border: none;
+                    border-top-right-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                }
+                #body_1{
+                    margin-top: 30px;
+                    color: rgb(225, 225, 225);
+                }
+                #body_1_2{
+                    background-image: url("img/Sbanner2.jpg");
+                    float: left;
+                    width: 80%;
+                    height: 360px;
+                }
+                #body_1_3{
+                    float: right;
+                    color: rgb(225, 225, 225);
+                    margin-right: 50px;
+                }
+                #body_1_2 img{
+                    display: none;
+                }
+                #body_1_4{
+                    background-color: rgb(23, 51, 110);
+                    text-align: center;
+                    height: 360px;
+                    width: 20%;
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                }
+                #body_1_5{
+                    margin-top: 50px;
+                }
+                #body_1_7{
+                    border: solid 1px rgb(225, 225, 225);
+                    width: 60%;
+                    height: 50px;
+                    text-align: center;
+                    line-height: 50px;
+                    border-radius: 15px;
+                    margin-left: 20%;
+                    margin-top: 50px;
+                }
+                #body_2{
+                    text-align: center;
+                }
+                /* #body_3{
+                    margin-left: 140px;
+                } */
+                #body_4{
+                    width: 100%;
+                    height: 985px;
+                }
+                #body_4_1{
+                    width: 49.7%;
+                    float: left;
+                    height: 985px;
+                }
+                #body_4_1 li{
+                    height: 490px;
+                    float: left;
+                    width: 100%;
+                    margin-bottom: 5px;
+                    background-size: cover;
+                }
+                #body_4_1 h4{
+                    margin-top: 390px;
+                    background-color: black;
+                    color: white;
+                    width: 100%;
+                    height: 100px;
+                    padding-top: 25px;
+                    padding-left: 30px;
+                    line-height: 30px;
+                    font-weight: lighter;
+                }
+                #body_4_2{
+                    width: 49.7%;
+                    float: right;
+                    height: 325px;
+                }
+                #body_4 button{
+                    display: none;
+                }
+                #body_4_2 li{
+                    height: 325px;
+                    float: right;
+                    width: 100%;
+                    margin-bottom: 5px;
+                    background-size: cover;
+                }
+                #body_4_2 h4{
+                    margin-top: 245px;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    color: white;
+                    width: 100%;
+                    height: 80px;
+                    padding-top: 15px;
+                    padding-left: 30px;
+                    line-height: 30px;
+                    font-weight: lighter;
+                }
+                #body_5{
+                    text-align: center;
+                }
+                #body_6{
+                    background-color: rgb(27, 77, 123);
+                    text-align: center;
+                    color: white;
+                    font-weight: lighter;
+                }
+                #body_6 h3{
+                    margin-top: 100px;
+                    margin-bottom: 30px;
+                }
+                #body_6 p{
+                    line-height: 35px;
+                    width: 70%;
+                    margin: 0 auto;
+                    text-align: left;
+                }
+                #body_7{
+                    background-color: rgb(28, 80, 128);
+                    color: white;
+                    margin: 5px 0 0 0;
+                }
+                #body_7_1{
+                    margin-top: 40px;
+                }
+                #body_7_2{
+                    margin-top: 40px;
+                    margin-left: 4vw;
+                }
+                #body_7_3{
+                    margin-top: 40px;
+                    margin-left: 4vw;
+                }
+                #body_8{
+                    display: none;
+                }
+                #footer_1{
+                    background-color: black;
+                    color: white;
+                    border-bottom: solid 1px rgba(225, 225, 225, 0.3);
+                }
+                #footer_1 p{
+                    text-align: center;
+                    /* margin-top: 5px; */
+                    line-height: 25px;
+                    font-weight: lighter;
+                }
+                #footer_1 ul{
+                    margin-top: 5px;
+                }
+                #footer_1 a{
+                    color: white;
+                }
+                #footer_2{
+                    background-color: black;
+                    color: white;
+                    text-align: center;
+                }
+                #footer_2 p{
+                    margin-top: 50px;
+                    margin-bottom: 100px;
+                }
+                #footer_3{
+                    display: none;
+                }
+                
+            }
+            @media screen and (max-width: 550px){
+                body{
+                    background-color: white;
+                }
+                #navigation_1{
+                    display: none;
+                }
+                #navigation_2{
+                    background-color: rgb(255, 255, 255);
+                    border: none;
+                }
+                #navigation_2_btn_1{
+                    border: none;
+                    padding-top: 25px;
+                }
+                #navigation_2_btn_2{
+                    float: right;
+                    margin-top: 25px;
+                    margin-right: 15px;
+                    background-color: rgb(232, 66, 10);
+                    border: solid 1px rgb(232, 66, 10);
+                }
+                #header_1{
+                    background-image: url("img/banner.jpg");
+                    height: 360px;
+                    width: auto;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+                #header_1_1{
+                    font-size: 6vw;
+                    margin-top: 60px;
+                    color: rgb(225, 225, 225);
+                    font-weight: lighter;
+                    margin-left: 20px;
+                }
+                #header_1_2{
+                    display: none;
+                }
+                #header_1_3{
+                    display: none;
+                }
+                #header_1_4{
+                    font-size: 4vw;
+                    color: rgb(225, 225, 225);
+                    font-weight: lighter;
+                    margin-top: 30px;
+                    margin-left: 20px;
+                }
+                #header_2_1{
+                    border: solid 3px rgba(26, 25, 66, 0.5);
+                    margin-top: 90px;
+                    display: inline-flex;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 5px;
+                }
+                #header_2_2{
+                    margin-right: 8px;
+                }
+                #header_2_3{
+                    width: 25%;
+                    font-weight: 100;
+                    text-align: center;
+                    line-height: 46px;
+                    background-color: rgb(211, 211, 216);
+                    height: 100%;
+                    margin-bottom: 0;
+                    border-top-left-radius: 5px;
+                    border-bottom-left-radius: 5px;
+                }
+                #header_2_4{
+                    width: 50%;
+                    background-color: rgb(255, 255, 255);
+                    font-weight: lighter;
+                }
+                #header_2_5{
+                    width: 25%;
+                    background-color: rgb(203, 84, 5);
+                    border: none;
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                }
+                #body_1{
+                    margin-top: 30px;
+                    color: rgb(225, 225, 225);
+                    height: 200px;
+                }
+                #BODY_1_1{
+                    height: 200px;
+                    margin-bottom: 0;
+                    padding-bottom: 0;
+                }
+                #body_1_2{
+                    background-color: white;
+                    color: rgb(28, 80, 128);
+                }
+                #body_1_2 img{
+                    margin-top: 50px;
+                    float: left;
+                }
+                #body_1_3{
+                    float: right;
+                    color: rgb(28, 80, 128);
+                    /* margin-right: 50px; */
+                    margin-top: 50px;
+                }
+                #body_1_3 h1{
+                    font-size: 30px;
+
+                }
+                #body_1_4{
+                    background-color: white;
+                    text-align: center;
+                    height: 360px;
+                    width: 20%;
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                }
+                #body_1_5{
+                    display: none;
+                }
+                #body_1_6{
+                    display: none;
+                }
+                #body_1_7{
+                    border: solid 1px rgba(33, 33, 33, 0.3);
+                    color: rgb(184, 184, 184);
+                    width: 100%;
+                    height: 50px;
+                    text-align: center;
+                    line-height: 50px;
+                    border-radius: 15px;
+                    /* margin-left: 20%; */
+                    margin-top: 50px;
+                }
+                #body_4_2{
+                    display: none;
+                }
+                #body_4{
+                    width: 100%;
+                    height: 985px;
+                }
+                #body_4_1{
+                    width: 100%;
+                    float: left;
+                    height: 985px;
+                }
+                #body_4_1 li{
+                    height: 490px;
+                    float: left;
+                    width: 100%;
+                    margin-bottom: 5px;
+                    background-size: cover;
+                }
+                #body_4_1 h4{
+                    margin-top: 390px;
+                    background-color: rgba(0, 0, 0, 0.7);
+                    color: white;
+                    width: 100%;
+                    height: 100px;
+                    padding-top: 25px;
+                    padding-left: 30px;
+                    line-height: 30px;
+                    font-weight: lighter;
+                }
+                #body_4 button{
+                    height: 50px;
+                    width: 250px;
+                    border-radius: 15px;
+                    color: rgb(184, 184, 184);
+                    margin-left: 100px;
+                    font-size: 25px;
+                }
+                #body_5{
+                    margin-top: 80px;
+                }
+                #body_6{
+                    text-align: center;
+                    color: black;
+                    float: left;
+                    margin-top: 20px;
+                    width: auto;
+                }
+                #body_6 h3{
+                    margin-top: 20px;
+                    color: black;
+                    /* margin-left: 150px; */
+                }
+                #body_6 p{
+                    text-align: left;
+                    line-height: 25px;
+                }
+                #body_7{
+                    display: none;
+                }
+                #body_8{
+                    width: auto;
+                    text-align: center;
+                    margin-bottom: 400px;
+                }
+                #body_8 img{
+                    float: left;
+                    margin-left: 50px;
+                }
+                #body_8 li{
+                    float: left;
+                    margin-top: 30px;
+                    border-bottom: solid 1px rgba(225, 225, 225, 0.3);
+                }
+                #body_8 p{
+                    float: left;
+                    line-height: 30px;
+                    width: 300px;
+                }
+                #footer_1{
+                    display: none;
+                }
+                #footer_2{
+                    display: none;
+                }
+                #footer_3{
+                    background-color: rgb(52, 50, 53);
+                    padding-top: 100px;
+                    text-align: center;
+                    padding-bottom: 100px;
+                    color: white;
+                    /* font-weight: bolder; */
+                    font-size: 18px;
+                    line-height: 33px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row" id="navigation_1">
+                <div id="navigation_1_3">
+                    <a href="#" style="color: rgb(184, 184, 184);">请登录</a>&nbsp;|&nbsp;<a href="#" style="color: rgb(184, 184, 184);">注册</a>
+                </div>
+                <div id="navigation_1_2">
+                    <p style="color: rgb(184, 184, 184);">400-868-8082</p>
+                </div>
+                <div id="navigation_1_1">
+                    <img src="img/tell.png" alt="tell">
+                </div>
+            </div>
+            <nav class="navbar navbar-default" id="navigation_2"> 
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" id="navigation_2_btn_1" data-toggle="collapse" data-target="#bs-1">
+                            <span class="sr-only">导航开关</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <button type="button" class="btn btn-primary navbar-btn" id="navigation_2_btn_2">快速定制</button>
+                        <a class="navbar-brand" href="#"><img src="img/logo.png" alt="logo"></a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#" style="color: rgb(203, 84, 5);">首页</a></li>
+                            <li><a href="#">热门路线</a></li>
+                            <li><a href="#">签证推荐</a></li>
+                            <li><a href="#">使命愿景</a></li> 
+                        </ul>   
+                        
+                    </div>
+                </div>
+            </nav>
+            <div class="row" id="header_1">
+                <div class="col col-md-6 col-md-offset-2">
+                    <p id="header_1_1">悠游古欧洲&nbsp;遍览德法瑞意</p>
+                </div>
+                <div class="col col-md-4"></div>
+                <div class="col col-md-4 col-md-offset-2">
+                    <p id="header_1_2">巴黎卢浮宫、塞纳河游船、凡尔赛宫</p>
+                    <p id="header_1_3">少女峰、大运河游船、金色列车，西庸城堡</p>
+                </div>
+                <div class="col col-md-5">
+                    <p id="header_1_4">全程升级热早+1晚5星酒店</p>
+                </div>
+                <div class="col col-md-6 col-md-offset-3" id="header_2">
+                    <!-- <div class="row" id="header_2_1">
+                        <div class="col col-md-3" id="header_2_2">
+                            <img src="img/position.png" alt="position">目的地
+                        </div>
+                        <div class="col col-md-6">
+                            <input type="text" class="form-control input-lg" id="header_2_4" value="| 日本 美国 英国 地中海">
+                        </div>
+                        <div class="col col-md-3">
+                            <span class="input-group-addon btn btn-primary" id="header_2_5">搜索</span>
+                        </div>
+                    </div> -->
+                    <div class="input-group" id="header_2_1">
+                        
+                        <p id="header_2_3">
+                            <img src="img/position.png" alt="position" id="header_2_2">目的地
+                        </p>
+                        <input type="text" class="form-control input-lg" id="header_2_4" value="| 日本 美国 英国 地中海">
+                        
+                        <span class="input-group-addon btn btn-primary" id="header_2_5">
+                            <img src="img/search.png" alt="search">
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col col-md-12" id="body_1">
+                    <div class="media" id="body_1_1">
+                        <div class="media-left" id="body_1_2">
+                            
+                            <img  src="img/carH.png" alt="carH">
+                            <div id="body_1_3">
+                                <h1>机场接送 省钱省心</h1>
+                                <p>提供上海、苏州、无锡各市</p>
+                                <p>往返机场、码头接送服务，更有包车服务</p>
+                            </div>
+                        </div>
+                        <div class="media-body" id="body_1_4">
+                            <div id="body_1_5"><img src="img/car.png" alt="SN6"></div>
+                            <h3 id="body_1_6">车辆接送</h3>
+                            <h3 id="body_1_7">查看详情</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-md-2 col-md-offset-5" id="body_2">
+                    <h2>热&nbsp;门&nbsp;线&nbsp;路</h2>
+                    <h5>Popular&nbsp;tourist&nbsp;routes</h5>
+                </div>
+            </div>
+            <!-- <div class="row" id="body_3">
+                <div class="col col-md-2 col-md-offset-4">
+                    
+                </div>
+            </div> -->
+            <div id="body_4">
+                <ul id="body_4_1">
+                    <li style="background-image: url('img/hot1.jpg');">
+                        <h4>海南三亚5天4晚，纯玩、4晚红树林度假王国<br>￥2580/人起</h4>
+                        <!-- <h3></h3> -->
+                    </li>
+                    <li style="background-image: url('img/hot2.jpg');">
+                        <h4>德法意瑞欧洲4国，ABCD任意线路由您挑选<br>￥7999/人起</h4>
+                        <!-- <h3></h3> -->
+                    </li>
+                </ul>
+                <button>查看更多<img src="img/hotR.png" alt="hotR"></button>
+                <ul id="body_4_2">
+                    <li style="background-image: url('img/hot3.jpg');">
+                        <h4>曼谷+芭提雅&nbsp;国际五星，赠送2220大礼包，绝无自费<br>￥2799/人起</h4>
+                        <h3></h3>
+                    </li>
+                    <li style="background-image: url('img/hot4.jpg');">
+                        <h4>日本本州游&nbsp;樱花、寿司、温泉、美食<br>￥5399/人起</h4>
+                        <h3></h3>
+                    </li>
+                    <li style="background-image: url('img/hot5.jpg');">
+                        <h4>斯里兰卡7天6晚全景游&nbsp;保证入住2晚香格里拉<br>￥7999/人起</h4>
+                        <h3></h3>
+                    </li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col col-md-4 col-md-offset-4" id="body_5">
+                    <h2>使命与愿景</h2>
+                    <h5>让旅游回归本质，体验纯粹旅游</h5>
+                </div>
+            </div>
+            <div class="media">
+                <div class="media-left">
+                    <a href="#" style="margin-right: -10px;"><img class="madia-object" src="img/mission1.jpg" alt="mission1"></a>
+                </div>
+                <div class="media-body" id="body_6">
+                    <h3>服务理念及优势</h3>
+                    <p> "英华逸游”通过重新打造旅游全程中的产品线路设计、出行交通方案、陪游向导服务、增值关怀项目等，为客户提供高品质的旅游体验。英华逸 游在泰国、欧洲、等多个国家拥有丰富的旅游资源，同时致力于给用户提供性价比高的产品和服务。</p>
+                </div>
+            </div>
+            <div class="media">
+                <div class="media-body">
+                    <img src="img/mission2.jpg" alt="mission2">
+                </div>
+            </div>
+            <div class="row" id="body_7">
+                <div class="col col-md-3 col-md-offset-1 text-center" id="body_7_1">
+                    <div>
+                        <div style="position: absolute; margin: 45px 103px">
+                            <img src="img/icon1.png" alt="icon1">
+                            <p style="margin-top: 18px;">品质行程</p>
+                        </div>
+                        <img src="img/rorate.png" alt="rorate">
+                    </div>
+                    <p style="margin-top: 40px; margin-bottom: 50px;">旅游达人精心设计、基于口碑反复打磨，全网最好，敢跟任何产品比</p>
+                </div>
+                <div class="col col-md-3 col-md-offset-0 text-center" id="body_7_2">
+                    <div>
+                        <div style="position: absolute; margin: 45px 103px">
+                            <img src="img/icon2.png" alt="icon2">
+                            <p style="margin-top: 13px;">品质消费</p>
+                        </div>
+                        <img src="img/rorate.png" alt="rorate">
+                    </div>
+                    <p style="margin-top: 40px; margin-bottom: 50px;">不推自费，<br>不进垃圾购物店和伪景点</p>
+                </div>
+                <div class="col col-md-3 col-md-offset-0 text-center" id="body_7_3">
+                    <div>
+                        <div style="position: absolute; margin: 45px 103px">
+                            <img src="img/icon3.png" alt="icon3">
+                            <p style="margin-top: 18px;">品质小团</p>
+                        </div>
+                        <img src="img/rorate.png" alt="rorate">
+                    </div>
+                    <p style="margin-top: 40px; margin-bottom: 50px;">独立成团不散拼，<br>只跟亲朋好友一起玩，每天发团</p>
+                </div>
+            </div>
+            <div id="body_8">
+                <h3>--服务优势--</h3>
+                <ul>
+                    <li>
+                        <img src="img/icon11.png" alt="icon11">
+                        <p>旅游达人精心设计、基于口碑反复打磨，<br>告别人山人海鸡肋景点<br>全网最好，敢跟任何产品比</p>
+                    </li>
+                    <li>
+                        <img src="img/icon22.png" alt="icon22">
+                        <p>不推自费，<br>不进垃圾购物店和伪景点</p>
+                    </li>
+                    <li>
+                        <img src="img/icon33.png" alt="icon33">
+                        <p>独立成团不散拼，<br>只跟亲朋好友一起玩，每天发团</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container-fluid" id="footer_1">
+            <div class="row" style="margin-top: 40px;">
+                <div class="col col-md-1 col-md-offset-1">
+                    <h4>合作伙伴</h4>
+                </div>
+                <div class="col col-md-9">
+                    <ul class="list-inline">
+                        <li>
+                            <div>
+                                <img src="img/xiecheng.png" alt="xiecheng">
+                                <p>携程网</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="img/feizhu.png" alt="feizhu">
+                                <p>阿里飞猪</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="img/quna.png" alt="quna">
+                                <p>去哪</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="img/suzhou.png" alt="suzhou">
+                                <p>苏州旅游局</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-md-1 col-md-offset-1">
+                    <h4>热门位置</h4>
+                </div>
+                <div class="col col-md-9">
+                    <ul class="list-inline">
+                        <li><p>韩国</p></li>
+                        <li><p>日本</p></li>
+                        <li><p>菲律宾</p></li>
+                        <li><p>越南</p></li>
+                        <li><p>老挝</p></li>
+                        <li><p>柬埔寨</p></li>
+                        <li><p>泰国</p></li>
+                        <li><p>马来西亚</p></li>
+                        <li><p>新加坡</p></li>
+                        <li><p>印度尼西亚</p></li>
+                        <li><p>印度</p></li>
+                        <li><p>斯里兰卡</p></li>
+                        <li><p>土耳其</p></li>
+                        <li><p>阿联酋</p></li>
+                        <li><p>西班牙</p></li>
+                        <li><p>意大利</p></li>
+                        <li><p>希腊</p></li>
+                        <li><p>法国</p></li>
+                        <li><p>比利时</p></li>
+                        <li><p>荷兰</p></li>
+                        <li><p>英国</p></li>
+                        <li><p>瑞士</p></li>
+                        <li><p>奥地利</p></li>
+                        <li><p>德国</p></li>
+                        <li><p>匈牙利</p></li>
+                        <li><p>俄罗斯</p></li>
+                        <li><p>捷克</p></li>
+                        <li><p>芬兰</p></li>
+                        <li><p>葡萄牙</p></li>
+                        <li><p>冰岛</p></li>
+                        <li><p>美国</p></li>
+                        <li><p>加拿大</p></li>
+                        <li><p>巴西</p></li>
+                        <li><p>阿根廷</p></li>
+                        <li><p>澳大利亚</p></li>
+                        <li><p>新西兰</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-md-1 col-md-offset-1">
+                    <h4>主题服务</h4>
+                </div>
+                <div class="col col-md-9">
+                    <ul class="list-inline">
+                        <li><p>海岛度假</p></li>
+                        <li><p>历史文化</p></li>
+                        <li><p>探索冒险</p></li>
+                        <li><p>美食购物</p></li>
+                        <li><p>都市生活</p></li>
+                        <li><p>海外游学</p></li>
+                        <li><p>邮轮度假</p></li>
+                        <li><p>蜜月摄影</p></li>
+                        <li><p>亲子乐园</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 50px;">
+                <div class="col col-md-1 col-md-offset-1">
+                    <h4>友情链接</h4>
+                </div>
+                <div class="col col-md-9">
+                    <ul class="list-inline">
+                        <li><a href="#"><p>马蜂窝</p></a></li>
+                        <li><a href="#"><p>穷游</p></a></li>
+                        <li><a href="#"><p>booking</p></a></li>
+                        <li><a href="#"><p>苏州旅游局</p></a></li>
+                        <li><a href="#"><p>驴友网</p></a></li>
+                        <li><a href="#"><p>吾爱全球签证中心</p></a></li>
+                        <li><a href="#"><p>酒店团购</p></a></li>
+                        <li><a href="#"><p>携程旅游攻略</p></a></li>
+                        <li><a href="#"><p>天巡职航在线</p></a></li>
+                        <li><a href="#"><p>满天飞旅游网</p></a></li>
+                        <li><a href="#"><p>中国旅游网</p></a></li>
+                        <li><a href="#"><p>澳乐网</p></a></li>
+                        <li><a href="#"><p>背包兔旅游行程</p></a></li>
+                        <li><a href="#"><p>出境旅游</p></a></li>
+                        <li><a href="#"><p>国际酒店</p></a></li>
+                        <li><a href="#"><p>广州旅行社</p></a></li>
+                        <li><a href="#"><p>出境旅游</p></a></li>
+                        <li><a href="#"><p>517旅游</p></a></li>
+                        <li><a href="#"><p>花生游</p></a></li>
+                        <li><a href="#"><p>家园网</p></a></li>
+                        <li><a href="#"><p>海外婚礼</p></a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" id="footer_2">
+            <div class="row">
+                <div class="col col-md-4 col-md-offset-4">
+                    <p>2020&nbsp;&nbsp;@苏州英华国际旅游有限公司&nbsp;版权所有</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" id="footer_3">
+            <p>苏ICP备号、2020<br>@苏州英华国际旅游有限公司&nbsp;版权所有<br>技术支持&nbsp;&nbsp;杭州科技</p>
+        </div>
+    </body>
+</html>
